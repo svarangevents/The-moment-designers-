@@ -134,44 +134,47 @@ ul {
     transition: opacity 0.9s ease, transform 0.9s ease;
 }
 
+.
 .welcome-background {
     position: absolute;
     inset: 0;
     background:
         radial-gradient(
-            ellipse at center,
-            rgba(198, 168, 120, 0.09) 0%,
-            transparent 65%
-        ),
-        linear-gradient(135deg, #111 0%, #080808 55%, #101010 100%);
+            ellipse at 50% 48%,
+            rgba(112, 82, 48, 0.25) 0%,
+            rgba(65, 48, 31, 0.16) 35%,
+            rgba(15, 13, 11, 0.4) 70%,
+            #080808 100%
+        );
 }
+
+/* SUBTLE SQUARE GRID */
 
 .welcome-background::before {
     content: "";
     position: absolute;
     inset: 0;
-    opacity: 0.2;
+    opacity: 0.35;
     background-image:
-        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-    background-size: 75px 75px;
-    mask-image: linear-gradient(to bottom, black, transparent);
+        linear-gradient(
+            rgba(198, 168, 120, 0.09) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(198, 168, 120, 0.09) 1px,
+            transparent 1px
+        );
+    background-size: 100px 100px;
 }
 
+/* REMOVE CIRCULAR DECORATION */
+
 .welcome-background::after {
-    content: "";
-    position: absolute;
-    width: 480px;
-    height: 480px;
-    border: 1px solid rgba(198, 168, 120, 0.1);
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow:
-        0 0 0 65px rgba(198, 168, 120, 0.025),
-        0 0 0 130px rgba(198, 168, 120, 0.015);
+    display: none;
+    content: none;
 }
+
 
 .welcome-content {
     position: relative;
